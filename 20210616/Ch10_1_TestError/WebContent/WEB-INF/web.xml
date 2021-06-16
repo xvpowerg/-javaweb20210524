@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+	<error-page>
+			<error-code>404</error-code>
+			<location>/ErrorServlet</location>	
+	</error-page>
+	<error-page>
+			<error-code>405</error-code>
+			<location>/ErrorServlet</location>
+	</error-page>
+	<!-- 在處裡Eexception的Servlet 的 request會多 javax.servlet.error.exception_type 與 javax.servlet.error.exception 的屬性-->
+	<error-page>
+	<exception-type>tw.com.exception.MyException</exception-type>
+	<location>/ExceptionServlet</location>
+	</error-page>
+	<!-- 預設Error頁面 -->
+	<error-page>
+		<location>/ErrorServlet</location>
+	</error-page>
+</web-app>
